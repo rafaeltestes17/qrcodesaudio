@@ -14,14 +14,14 @@
 
         .container {
             max-width: 700px;
-            margin: 30px auto;
+            margin: 20px auto;
             padding: 20px;
         }
 
         h1 {
             text-align: center;
             color: #2c3e50;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         #audios-container {
@@ -38,6 +38,11 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            transition: transform 0.2s;
+        }
+
+        .audio-card:hover {
+            transform: translateY(-2px);
         }
 
         .audio-card p {
@@ -54,6 +59,22 @@
             text-align: center;
             font-style: italic;
             color: #555;
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            .audio-card {
+                padding: 12px 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -76,7 +97,7 @@
             fetch(`/api/audios/${qrId}`)
                 .then(res => res.json())
                 .then(data => {
-                    if (data.audios.length === 0) {
+                    if (!data.audios || data.audios.length === 0) {
                         container.innerHTML = '<p class="message">Nenhum áudio disponível.</p>';
                         return;
                     }
