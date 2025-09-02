@@ -9,6 +9,8 @@ const saveBtn = document.getElementById('save-audios');
 const uploadInput = document.getElementById('upload-audio');
 const uploadBtn = document.getElementById('upload-btn');
 const addQrBtn = document.getElementById('add-qrcode'); // botão para criar novo QR code
+const viewQrBtn = document.getElementById('view-qr-link'); // botão para ver link
+const qrLinkDisplay = document.getElementById('qr-link');
 
 // --------------------------
 // Renderiza a lista de áudios
@@ -120,7 +122,6 @@ function loadQrCodes() {
                 option.textContent = `QR Code ${id}`;
                 qrSelect.appendChild(option);
             });
-            // Dispara o carregamento do primeiro QR code
             if (qrSelect.options.length > 0) {
                 qrSelect.dispatchEvent(new Event('change'));
             }
@@ -131,21 +132,27 @@ function loadQrCodes() {
 // Adicionar novo QR code
 // --------------------------
 addQrBtn.addEventListener('click', () => {
-    // Descobre o próximo ID disponível
     const existingIds = Array.from(qrSelect.options).map(o => parseInt(o.value));
     let newId = 1;
     while (existingIds.includes(newId)) newId++;
 
-    // Cria a opção no select
     const option = document.createElement('option');
     option.value = newId;
     option.textContent = `QR Code ${newId}`;
     qrSelect.appendChild(option);
     qrSelect.value = newId;
 
-    // Inicializa áudios vazios
     currentAudios = [];
     renderAudios();
+});
+
+// --------------------------
+// Gerar link do QR code selecionado
+// --------------------------
+viewQrBtn.addEventListener('click', () => {
+    const id = qrSelect.value;
+    const link = `${window.location.origin}/qrcode.html?id=${id}`;
+    qrLinkDisplay.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
 });
 
 // --------------------------

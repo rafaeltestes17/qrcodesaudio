@@ -96,6 +96,23 @@
         #add-qrcode:hover {
             background-color: #27ae60;
         }
+
+        /* Botão de ver link do QR code */
+        #view-qr-link {
+            background-color: #f39c12;
+            margin-top: 10px;
+        }
+
+        #view-qr-link:hover {
+            background-color: #d35400;
+        }
+
+        #qr-link {
+            margin-top: 10px;
+            word-break: break-all;
+            font-weight: bold;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
@@ -105,6 +122,8 @@
         <label for="qr-id">Selecione o QR Code:</label>
         <select id="qr-id"></select>
         <button id="add-qrcode">Adicionar novo QR Code</button>
+        <button id="view-qr-link">Ver link do QR Code selecionado</button>
+        <p id="qr-link"></p>
 
         <h2>Áudios atuais</h2>
         <ul id="audios-list"></ul>
