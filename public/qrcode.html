@@ -46,9 +46,12 @@
             color: #34495e;
         }
 
+        /* Ajuste do player de áudio */
         audio {
             width: 100%;
-            height: 40px; /* maior altura para touch em celular */
+            height: auto;       /* deixa o navegador decidir a altura */
+            min-height: 40px;   /* garante espaço maior para toque */
+            outline: none;
         }
 
         p.message {
@@ -73,7 +76,7 @@
             }
 
             audio {
-                height: 45px; /* um pouco maior em celular */
+                min-height: 45px; /* aumenta só no mobile */
             }
         }
     </style>
