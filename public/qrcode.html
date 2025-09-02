@@ -27,22 +27,17 @@
         #audios-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .audio-card {
             background-color: #fff;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            transition: transform 0.2s;
-        }
-
-        .audio-card:hover {
-            transform: translateY(-2px);
+            gap: 12px;
         }
 
         .audio-card p {
@@ -53,6 +48,7 @@
 
         audio {
             width: 100%;
+            height: 40px; /* maior altura para touch em celular */
         }
 
         p.message {
@@ -69,11 +65,15 @@
             }
 
             .audio-card {
-                padding: 12px 15px;
+                padding: 15px;
             }
 
             h1 {
                 font-size: 1.5em;
+            }
+
+            audio {
+                height: 45px; /* um pouco maior em celular */
             }
         }
     </style>
@@ -85,10 +85,8 @@
     </div>
 
     <script>
-        // Pega o ID do QR code da URL, ex: ?id=1
         const urlParams = new URLSearchParams(window.location.search);
         const qrId = urlParams.get('id');
-
         const container = document.getElementById('audios-container');
 
         if (!qrId) {
