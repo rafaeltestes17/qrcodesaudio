@@ -1,125 +1,215 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <title>Áudios do QR Code</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <title>Áudios do QR Code</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            max-width: 700px;
-            margin: 20px auto;
-            padding: 20px;
-        }
+    .container {
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+    }
 
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 25px;
-        }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
 
-        #audios-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+    #audios-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        .audio-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-        }
+    .audio-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        .audio-card p {
-            margin: 0 0 10px 0;
-            font-weight: bold;
-            color: #34495e;
-        }
+    .audio-card p {
+      margin: 0 0 10px 0;
+      font-weight: bold;
+      color: #34495e;
+    }
 
-        /* Wrapper para corrigir bug no Safari iOS */
-        .audio-wrapper {
-            display: block;
-            width: 100%;
-        }
+    .custom-player {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        audio {
-            width: 100%;
-            display: block;   /* força ocupar a linha toda */
-            border-radius: 6px;
-        }
+    .play-btn {
+      background: #2c3e50;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
 
-        p.message {
-            text-align: center;
-            font-style: italic;
-            color: #555;
-        }
+    .play-btn:hover {
+      background: #1a252f;
+    }
 
-        /* Responsividade */
-        @media (max-width: 480px) {
-            .container {
-                padding: 15px;
-                margin: 10px;
-            }
+    .progress-bar {
+      flex: 1;
+      height: 8px;
+      background: #ddd;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+    }
 
-            .audio-card {
-                padding: 15px;
-            }
+    .progress {
+      height: 100%;
+      background: #2c3e50;
+      width: 0%;
+      border-radius: 4px;
+    }
 
-            h1 {
-                font-size: 1.5em;
-            }
-        }
-    </style>
+    .time {
+      font-size: 14px;
+      color: #555;
+      min-width: 50px;
+      text-align: right;
+    }
+
+    p.message {
+      text-align: center;
+      font-style: italic;
+      color: #555;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+        margin: 10px;
+      }
+
+      .audio-card {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Áudios do QR Code</h1>
-        <div id="audios-container"></div>
-    </div>
+  <div class="container">
+    <h1>Áudios do QR Code</h1>
+    <div id="audios-container"></div>
+  </div>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const qrId = urlParams.get('id');
-        const container = document.getElementById('audios-container');
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const qrId = urlParams.get('id');
+    const container = document.getElementById('audios-container');
 
-        if (!qrId) {
-            container.innerHTML = '<p class="message">ID do QR code não informado.</p>';
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m}:${s < 10 ? "0" : ""}${s}`;
+    }
+
+    function createCustomPlayer(audioUrl, index) {
+      const div = document.createElement('div');
+      div.className = 'audio-card';
+      div.innerHTML = `
+        <p>Áudio ${index + 1}</p>
+        <div class="custom-player">
+          <button class="play-btn">▶</button>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <span class="time">0:00</span>
+        </div>
+        <audio src="${audioUrl}"></audio>
+      `;
+
+      const audio = div.querySelector('audio');
+      const playBtn = div.querySelector('.play-btn');
+      const progressBar = div.querySelector('.progress-bar');
+      const progress = div.querySelector('.progress');
+      const timeEl = div.querySelector('.time');
+
+      playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          // Pausar outros áudios
+          document.querySelectorAll('audio').forEach(a => {
+            if (a !== audio) {
+              a.pause();
+              a.parentElement.querySelector('.play-btn').textContent = "▶";
+            }
+          });
+          audio.play();
+          playBtn.textContent = "⏸";
         } else {
-            fetch(`/api/audios/${qrId}`)
-                .then(res => res.json())
-                .then(data => {
-                    if (!data.audios || data.audios.length === 0) {
-                        container.innerHTML = '<p class="message">Nenhum áudio disponível.</p>';
-                        return;
-                    }
-
-                    data.audios.forEach((audioUrl, index) => {
-                        const div = document.createElement('div');
-                        div.className = 'audio-card';
-                        div.innerHTML = `
-                            <p>Áudio ${index + 1}</p>
-                            <div class="audio-wrapper">
-                                <audio controls>
-                                    <source src="${audioUrl}" type="audio/mpeg">
-                                    Seu navegador não suporta áudio.
-                                </audio>
-                            </div>
-                        `;
-                        container.appendChild(div);
-                    });
-                })
-                .catch(err => {
-                    container.innerHTML = '<p class="message">Erro ao carregar os áudios.</p>';
-                    console.error(err);
-                });
+          audio.pause();
+          playBtn.textContent = "▶";
         }
-    </script>
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = percent + "%";
+        timeEl.textContent = formatTime(audio.currentTime);
+      });
+
+      audio.addEventListener('ended', () => {
+        playBtn.textContent = "▶";
+        progress.style.width = "0%";
+        timeEl.textContent = "0:00";
+      });
+
+      progressBar.addEventListener('click', (e) => {
+        const rect = progressBar.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        audio.currentTime = percent * audio.duration;
+      });
+
+      return div;
+    }
+
+    if (!qrId) {
+      container.innerHTML = '<p class="message">ID do QR code não informado.</p>';
+    } else {
+      fetch(`/api/audios/${qrId}`)
+        .then(res => res.json())
+        .then(data => {
+          if (!data.audios || data.audios.length === 0) {
+            container.innerHTML = '<p class="message">Nenhum áudio disponível.</p>';
+            return;
+          }
+
+          data.audios.forEach((audioUrl, index) => {
+            const player = createCustomPlayer(audioUrl, index);
+            container.appendChild(player);
+          });
+        })
+        .catch(err => {
+          container.innerHTML = '<p class="message">Erro ao carregar os áudios.</p>';
+          console.error(err);
+        });
+    }
+  </script>
 </body>
 </html>
