@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Museu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #34495e;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        select, input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 5px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #audios-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #audios-list li {
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #audios-list li button {
+            background-color: #e74c3c;
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+
+        #audios-list li button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Botão de adicionar novo QR Code */
+        #add-qrcode {
+            background-color: #2ecc71;
+        }
+
+        #add-qrcode:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Painel de Controle do Museu</h1>
+
+        <label for="qr-id">Selecione o QR Code:</label>
+        <select id="qr-id"></select>
+        <button id="add-qrcode">Adicionar novo QR Code</button>
+
+        <h2>Áudios atuais</h2>
+        <ul id="audios-list"></ul>
+
+        <h2>Adicionar novo áudio (via URL)</h2>
+        <input type="text" id="new-audio" placeholder="URL do áudio">
+        <button id="add-audio">Adicionar</button>
+
+        <h2>Adicionar novo áudio (upload)</h2>
+        <input type="file" id="upload-audio" accept=".mp3">
+        <button id="upload-btn">Upload</button>
+
+        <button id="save-audios" style="margin-top:20px;">Salvar alterações</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
