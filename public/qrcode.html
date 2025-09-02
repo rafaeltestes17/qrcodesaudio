@@ -35,23 +35,24 @@
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
         }
 
         .audio-card p {
-            margin: 0;
+            margin: 0 0 10px 0;
             font-weight: bold;
             color: #34495e;
         }
 
-        /* Ajuste do player de áudio */
+        /* Wrapper para corrigir bug no Safari iOS */
+        .audio-wrapper {
+            display: block;
+            width: 100%;
+        }
+
         audio {
             width: 100%;
-            height: auto;       /* deixa o navegador decidir a altura */
-            min-height: 40px;   /* garante espaço maior para toque */
-            outline: none;
+            display: block;   /* força ocupar a linha toda */
+            border-radius: 6px;
         }
 
         p.message {
@@ -73,10 +74,6 @@
 
             h1 {
                 font-size: 1.5em;
-            }
-
-            audio {
-                min-height: 45px; /* aumenta só no mobile */
             }
         }
     </style>
@@ -108,10 +105,12 @@
                         div.className = 'audio-card';
                         div.innerHTML = `
                             <p>Áudio ${index + 1}</p>
-                            <audio controls>
-                                <source src="${audioUrl}" type="audio/mpeg">
-                                Seu navegador não suporta áudio.
-                            </audio>
+                            <div class="audio-wrapper">
+                                <audio controls>
+                                    <source src="${audioUrl}" type="audio/mpeg">
+                                    Seu navegador não suporta áudio.
+                                </audio>
+                            </div>
                         `;
                         container.appendChild(div);
                     });
