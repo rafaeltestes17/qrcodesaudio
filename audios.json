@@ -1,14 +1,24 @@
 {
-  "1": [
-    "https://linkpara/audio1.mp3"
-  ],
-  "2": [
-    "https://linkpara/audio3.mp3"
-  ],
-  "3": [
-    "/uploads/1756820112635-517886092-Epic Electric Timer - 15 Seconds Countdown.mp3"
-  ],
-  "4": [
-    "/uploads/1756820846446-650737227-Epic Electric Timer - 15 Seconds Countdown.mp3"
-  ]
+  "1": {
+    "descricao": "Animais dos bons  sadasdsada",
+    "audios": [
+      {
+        "url": "/uploads/1756893729265-489395756-Epic Electric Timer - 15 Seconds Countdown.mp3",
+        "nome": "Delicia nossa nome audio 1 teste"
+      },
+      {
+        "url": "/uploads/1756896051861-844650282-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
+        "nome": "testeeeeeeeeeeeeeeeeee"
+      }
+    ]
+  },
+  "2": {
+    "descricao": "Isso é que era code 2",
+    "audios": [
+      {
+        "url": "/uploads/1756896776950-478971525-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
+        "nome": "teste "
+      }
+    ]
+  }
 }
