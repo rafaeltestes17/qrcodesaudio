@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 // --------------------------
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    if (username === 'admin' && password === '1234') {
+    if (username === 'adminserpa' && password === 'Serpamodal07') {
         req.session.logado = true;
         res.json({ success: true });
     } else res.json({ success: false, error: 'Credenciais inválidas' });
