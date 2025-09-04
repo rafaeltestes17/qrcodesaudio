@@ -2,17 +2,18 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conteúdos do QR Code</title>
 <style>
   @font-face {
-    font-family: 'MyriadPro-Regular_0';
+    font-family: 'MyriadPro-Regular';
     src: url('imagens/MyriadPro-Regular_0.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
 
   body {
-    font-family: 'MyriadPro-Regular_0', Arial, sans-serif;
+    font-family: 'MyriadPro-Regular';
     background-color: #ffffff;
     margin: 0;
     padding: 0;
@@ -27,13 +28,18 @@
     width: 500px;
     max-width: 95%;
     background: #f9f9f9;
-    padding: 100px 30px 100px 30px;
+    padding: 150px 30px 150px 30px; /* espaçamento maior para logo topo e fundo */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     display: flex;
     overflow-y: auto;
     align-items: stretch;
     flex-direction: column;
+  }
+
+  #content-container {
+    margin-top: 20px; /* reduzindo espaçamento entre título e botões */
+    margin-bottom: 50px; /* mantém espaço para logo de baixo */
   }
 
   .container-wrapper img.logo-top {
@@ -53,26 +59,27 @@
   }
 
   h1 {
-    font-family: 'MyriadPro-Regular_0';
+    font-family: 'MyriadPro-Regular';
     color: #000;
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 5px; /* antes era 30px, agora reduzido */
     text-align: center;
   }
 
   .file-btn {
-  display: block;           
-  width: 100%;              
-  max-width: 600px;         
-  margin: 15px auto;        
-  padding: 30px;            
-  font-size: 1.2rem;        
-  text-align: center;       
-  border: none;                
-  background-color: #000000; 
-  color: white;             
-  cursor: pointer;          
-  transition: background 0.3s ease;
+    font-family: 'MyriadPro-Regular';  
+    display: block;           
+    width: 100%;              
+    max-width: 600px;         
+    margin: 15px auto;        
+    padding: 30px;            
+    font-size: 1.2rem;        
+    text-align: center;       
+    border: none;                
+    background-color: #000000; 
+    color: white;             
+    cursor: pointer;          
+    transition: background 0.3s ease;
   }
   .file-btn:hover {
     background: #222222;
@@ -140,7 +147,7 @@
   .message { text-align: center; font-style: italic; color: #555; margin-top: 20px; }
 
   @media(max-width:768px) {
-    .container-wrapper { width: 90%; padding: 80px 20px; }
+    .container-wrapper { width: 90%; padding: 120px 20px 120px 20px; }
     .file-btn { font-size: 16px; height: 70px; margin: 10px 0; }
     .container-wrapper img.logo-top { max-width: 80px; }
     .container-wrapper img.logo-bottom { max-width: 70px; }
