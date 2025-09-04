@@ -1,214 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <title>Painel do Museu</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #eef1f6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<title>Painel Admin - Gestor de QR Codes</title>
+<style>
+    :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #f39c12;
+        --danger: #e74c3c;
+        --success: #27ae60;
+        --light: #f7f9fc;
+        --border: #ddd;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            transition: box-shadow 0.3s ease;
-        }
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: var(--light);
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
 
-        .container:hover {
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
+    .container {
+        margin: 30px auto;
+        max-width: 1100px;
+        width: 95%;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        overflow: hidden;
+    }
 
-        h1 {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--primary);
+        color: #fff;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+
+    .header img {
+        height: 50px;
+        object-fit: contain;
+    }
+
+    .section {
+        border-top: 1px solid var(--border);
+        padding: 20px;
+        background: #fff;
+    }
+
+    .section h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: var(--primary);
+    }
+
+    input[type="text"], input[type="file"] {
+        border: 1px solid var(--border);
+        padding: 10px;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 6px;
+        transition: border 0.2s;
+    }
+
+    input[type="text"]:focus, input[type="file"]:focus {
+        border-color: var(--secondary);
+        outline: none;
+    }
+
+    button {
+        border: none;
+        border-radius: 6px;
+        padding: 10px 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.1s;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+    }
+
+    #upload-qr-btn, #upload-btn {
+        background: var(--secondary);
+        color: #fff;
+    }
+
+    #view-qr-link {
+        background: var(--accent);
+        color: #fff;
+    }
+
+    #save-btn {
+        background: var(--success);
+        color: #fff;
+    }
+
+    #reject-btn {
+        background: var(--danger);
+        color: #fff;
+    }
+
+    #back-btn {
+        background: var(--primary);
+        color: #fff;
+    }
+
+    .files {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+        flex-wrap: wrap;
+    }
+
+    .files input {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .files button {
+        background: var(--danger);
+        color: #fff;
+        padding: 8px 14px;
+    }
+
+    .footer {
+        background: var(--light);
+        border-top: 1px solid var(--border);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: column;
             text-align: center;
-            color: #2c3e50;
-            font-weight: 700;
         }
 
-        h2 {
-            margin-top: 30px;
-            color: #34495e;
-        }
-
-        label {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        select, input[type="text"], input[type="file"] {
-            width: 100%;
-            padding: 10px 12px;
-            margin-top: 8px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
-        select:focus, input[type="text"]:focus, input[type="file"]:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 8px rgba(52,152,219,0.3);
-            outline: none;
-        }
-
-        button {
-            color: white;
-            padding: 10px 22px;
-            margin-top: 5px;
-            margin-right: 5px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-        }
-
-        /* Botões com gradiente */
-        #add-qrcode {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-        }
-        #add-qrcode:hover {
-            background: linear-gradient(135deg, #27ae60, #1e8449);
-        }
-
-        #view-qr-link {
-            background: linear-gradient(135deg, #f39c12, #d35400);
-            margin-top: 10px;
-        }
-        #view-qr-link:hover {
-            background: linear-gradient(135deg, #d35400, #e67e22);
-        }
-
-        #delete-qr {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            margin-top: 10px;
-        }
-        #delete-qr:hover {
-            background: linear-gradient(135deg, #c0392b, #992d22);
-        }
-
-        #upload-btn {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-        }
-        #upload-btn:hover {
-            background: linear-gradient(135deg, #2980b9, #2471a3);
-        }
-
-        #save-audios {
-            background: linear-gradient(135deg, #8e44ad, #71368a);
-        }
-        #save-audios:hover {
-            background: linear-gradient(135deg, #71368a, #5e2a70);
-        }
-
-        #qr-link {
-            margin-top: 10px;
-            word-break: break-all;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        /* Lista de áudios */
-        #audios-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 30px;
-            display: flex;
+        .files {
             flex-direction: column;
-            gap: 15px;
+            align-items: stretch;
         }
 
-        .audio-card {
-            background-color: #f7f9fa;
-            padding: 16px 22px;
-            border-radius: 14px;
-            display: flex;
+        .footer {
             flex-direction: column;
-            gap: 10px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .audio-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(0,0,0,0.12);
-        }
-
-        .audio-row {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 10px;
         }
-
-        .audio-row input[type="text"] {
-            flex: 1;
-            padding: 8px 10px;
-            font-size: 1.1em;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            transition: all 0.3s ease;
-        }
-
-        .audio-row input[type="text"]:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 6px rgba(52,152,219,0.3);
-            outline: none;
-        }
-
-        .audio-row button {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            padding: 6px 12px;
-            font-size: 0.95em;
-            border-radius: 6px;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-
-        .audio-row button:hover {
-            background: linear-gradient(135deg, #c0392b, #992d22);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Painel Admin QR Codes Museu</h1>
 
-        <label for="qr-id">Selecione o QR Code:</label>
-        <select id="qr-id"></select>
-        <button id="add-qrcode">Adicionar novo QR Code</button>
-        <button id="view-qr-link">Ver link do QR Code selecionado</button>
-        <button id="delete-qr">Eliminar QR Code</button>
-        <p id="qr-link"></p>
-
-        <label for="qr-descricao">Descrição do QR Code / Título Página do QR Code</label>
-        <input type="text" id="qr-descricao" placeholder="Ex: Entrada principal">
-
-        <h2>Áudios atuais</h2>
-        <ul id="audios-list"></ul>
-
-        <h2>Adicionar novo áudio (upload)</h2>
-        <input type="file" id="upload-audio" accept=".mp3,.wav,.ogg">
-        <button id="upload-btn">Upload</button>
-
-        <button id="save-audios" style="margin-top:20px;">Salvar alterações</button>
+<div class="container">
+    <div class="header">
+        <img src="logo.png" alt="Logo do Museu">
+        <div>Gestor de QR Codes</div>
     </div>
 
-    <script src="scripts.js"></script>
+    <!-- Título do QR Code + Upload da imagem -->
+    <div class="section">
+        <label for="qr-descricao">Título do QRCode</label><br>
+        <input type="text" id="qr-descricao" placeholder="Título do QR Code"><br><br>
+
+        <label for="upload-qr">Upload de QRCODE para impressão</label><br>
+        <input type="file" id="upload-qr" accept=".png,.jpg,.jpeg,.svg">
+        <button id="upload-qr-btn">Upload</button>
+    </div>
+
+    <!-- Botão Consultar link do QRCode -->
+    <div class="section">
+        <button id="view-qr-link">Consultar link do QRCode</button>
+        <p id="qr-image-link"></p>
+    </div>
+
+    <!-- Ficheiros atuais -->
+    <div class="section">
+        <h2>Ficheiros atuais</h2>
+        <ul id="audios-list"></ul>
+    </div>
+
+    <!-- Adicionar novos ficheiros -->
+    <div class="section">
+        <h2>Adicionar novos ficheiros</h2>
+        <input type="file" id="upload-audio" accept=".mp3,.wav,.ogg,.mp4,.mov,.avi,.pdf,.png,.jpg,.jpeg,.svg">
+        <button id="upload-btn">Upload</button>
+    </div>
+
+    <!-- Rodapé com ações principais -->
+    <div class="footer">
+        <button id="save-btn">Salvar alterações</button>
+        <button id="reject-btn">Rejeitar alterações</button>
+        <button id="back-btn">Voltar à listagem de QRCodes</button>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
 </body>
 </html>

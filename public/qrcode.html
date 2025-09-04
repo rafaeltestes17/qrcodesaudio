@@ -1,122 +1,252 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Áudios do QR Code</title>
-  <style>
-    body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; }
-    .container { max-width: 700px; margin: 20px auto; padding: 20px; }
-    h1 { text-align: center; color: #2c3e50; margin-bottom: 25px; }
-    #audios-container { display: flex; flex-direction: column; gap: 20px; }
-    .audio-card { background-color: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1); }
-    .audio-card p { margin: 0 0 10px 0; font-weight: bold; color: #34495e; }
-    .custom-player { display: flex; align-items: center; gap: 12px; }
-    .play-btn { background: #2c3e50; color: #fff; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-    .play-btn:hover { background: #1a252f; }
-    .progress-bar { flex: 1; height: 8px; background: #ddd; border-radius: 4px; position: relative; cursor: pointer; }
-    .progress { height: 100%; background: #2c3e50; width: 0%; border-radius: 4px; }
-    .time { font-size: 14px; color: #555; min-width: 50px; text-align: right; }
-    p.message { text-align: center; font-style: italic; color: #555; }
-    @media (max-width: 480px) { .container { padding: 15px; margin: 10px; } .audio-card { padding: 15px; } h1 { font-size: 1.5em; } }
-  </style>
+<meta charset="UTF-8">
+<title>Conteúdos do QR Code</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; color: #333; }
+  .container { max-width: 800px; margin: 20px auto; padding: 20px; text-align: center; }
+  
+  .logo-container { margin-bottom: 20px; }
+  .logo-container img { max-width: 200px; height: auto; }
+
+  h1 { text-align: center; color: #2c3e50; margin-bottom: 25px; }
+
+  .file-btn {
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; padding: 15px; margin: 10px 0;
+    font-size: 16px; font-weight: bold;
+    background: #2c3e50; color: #fff; border: none; border-radius: 8px;
+    cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .file-btn:hover { background: #1a252f; transform: scale(1.02); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+
+  .fullscreen {
+    position: fixed; top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9);
+    display: flex; flex-direction: column;
+    z-index: 9999; opacity: 0; transform: scale(0.95);
+    transition: all 0.3s ease;
+  }
+  .fullscreen.show { opacity: 1; transform: scale(1); }
+
+  /* --- Barra superior --- */
+  .top-bar {
+    width: 100%; height: 50px;
+    background: #2c3e50; color: #fff;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 15px; box-sizing: border-box;
+    flex-shrink: 0;
+  }
+  .top-bar button {
+    background: #e74c3c; border: none; border-radius: 6px;
+    padding: 6px 12px; color: #fff; font-weight: bold; cursor: pointer;
+  }
+  .top-bar button:hover { background: #c0392b; }
+  .top-bar .title { flex: 1; text-align: center; font-weight: bold; font-size: 16px; }
+
+  .fullscreen-content {
+    flex: 1; width: 100%;
+    display: flex; justify-content: center; align-items: center;
+    background: #fff; overflow: hidden; position: relative;
+  }
+
+  /* --- Áudio customizado --- */
+  .audio-player {
+    display: flex; flex-direction: column; align-items: center;
+    background: #fff; padding: 20px; border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-width: 400px; width: 90%;
+  }
+  .audio-controls { display: flex; align-items: center; width: 100%; gap: 10px; }
+  .play-btn {
+    width: 45px; height: 45px;
+    border-radius: 50%; border: none;
+    background: #2c3e50; color: #fff;
+    font-size: 20px; cursor: pointer;
+    display: flex; justify-content: center; align-items: center;
+    transition: background 0.2s;
+  }
+  .play-btn:hover { background: #1a252f; }
+  .progress-bar {
+    flex: 1; height: 6px;
+    background: #ddd; border-radius: 4px; cursor: pointer;
+    position: relative;
+  }
+  .progress { height: 100%; width: 0%; background: #2c3e50; border-radius: 4px; }
+  .time-display { font-size: 12px; color: #555; min-width: 55px; text-align: right; }
+
+  iframe { width: 100%; height: 100%; border: none; }
+  video, img { max-width: 95%; max-height: 95vh; border-radius: 8px; object-fit: contain; }
+
+  .message { text-align: center; font-style: italic; color: #555; margin-top: 20px; }
+
+  @media(max-width:768px) {
+    .file-btn { font-size: 14px; padding: 12px; }
+    .top-bar .title { font-size: 14px; }
+    .logo-container img { max-width: 150px; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Áudios do QR Code</h1>
-    <div id="audios-container"></div>
+
+<div class="container">
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo da Empresa">
   </div>
+  <h1>Conteúdos do QR Code</h1>
+  <div id="content-container"></div>
+</div>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const qrId = urlParams.get('id');
-    const container = document.getElementById('audios-container');
-    const title = document.querySelector('h1');
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const qrId = urlParams.get('id');
+const container = document.getElementById('content-container');
+const title = document.querySelector('h1');
 
-    function formatTime(seconds) {
-      const m = Math.floor(seconds / 60);
-      const s = Math.floor(seconds % 60);
-      return `${m}:${s < 10 ? "0" : ""}${s}`;
-    }
+function formatTime(seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s < 10 ? '0' : ''}${s}`;
+}
 
-    function createCustomPlayer(audio, index) {
-      const div = document.createElement('div');
-      div.className = 'audio-card';
-      div.innerHTML = `
-        <p>${audio.nome || `Áudio ${index + 1}`}</p>
-        <div class="custom-player">
-          <button class="play-btn">▶</button>
-          <div class="progress-bar">
-            <div class="progress"></div>
-          </div>
-          <span class="time">0:00</span>
-        </div>
-        <audio src="${audio.url}"></audio>
-      `;
+function openFullscreen(file) {
+  const fsDiv = document.createElement('div');
+  fsDiv.className = 'fullscreen';
 
-      const a = div.querySelector('audio');
-      const playBtn = div.querySelector('.play-btn');
-      const progressBar = div.querySelector('.progress-bar');
-      const progress = div.querySelector('.progress');
-      const timeEl = div.querySelector('.time');
+  const topBar = document.createElement('div');
+  topBar.className = 'top-bar';
 
-      playBtn.addEventListener('click', () => {
-        document.querySelectorAll('audio').forEach(audioEl => {
-          if (audioEl !== a) {
-            audioEl.pause();
-            audioEl.parentElement.querySelector('.play-btn').textContent = "▶";
-          }
-        });
-        if (a.paused) {
-          a.play(); playBtn.textContent = "⏸";
-        } else { a.pause(); playBtn.textContent = "▶"; }
-      });
+  const fileTitle = document.createElement('div');
+  fileTitle.className = 'title';
+  fileTitle.textContent = file.nome || file.tipo;
 
-      a.addEventListener('timeupdate', () => {
-        const percent = (a.currentTime / a.duration) * 100;
-        progress.style.width = percent + "%";
-        timeEl.textContent = formatTime(a.currentTime);
-      });
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = 'Fechar';
+  closeBtn.onclick = () => fsDiv.remove();
 
-      a.addEventListener('ended', () => {
-        playBtn.textContent = "▶";
-        progress.style.width = "0%";
-        timeEl.textContent = "0:00";
-      });
+  topBar.appendChild(document.createElement('div')); // espaço vazio à esquerda
+  topBar.appendChild(fileTitle);
+  topBar.appendChild(closeBtn);
 
-      progressBar.addEventListener('click', e => {
-        const rect = progressBar.getBoundingClientRect();
-        const percent = (e.clientX - rect.left) / rect.width;
-        a.currentTime = percent * a.duration;
-      });
+  const contentWrapper = document.createElement('div');
+  contentWrapper.className = 'fullscreen-content';
 
-      return div;
-    }
+  let content;
+  if(file.tipo === 'audio') {
+    const audio = document.createElement('audio');
+    audio.src = file.url;
 
-    if (!qrId) {
-      container.innerHTML = '<p class="message">ID do QR code não informado.</p>';
-    } else {
-      fetch(`/api/audios/${qrId}`)
-        .then(res => res.json())
-        .then(data => {
-          // Atualiza o título com a descrição do QR code
-          title.textContent = data.descricao || 'Áudios do QR Code';
+    content = document.createElement('div');
+    content.className = 'audio-player';
 
-          if (!data.audios || data.audios.length === 0) {
-            container.innerHTML = '<p class="message">Nenhum áudio disponível.</p>';
-            return;
-          }
+    const controls = document.createElement('div');
+    controls.className = 'audio-controls';
 
-          // Cada áudio é agora um objeto { url, nome }
-          data.audios.forEach((audio, index) => {
-            const player = createCustomPlayer(audio, index);
-            container.appendChild(player);
-          });
-        })
-        .catch(err => {
-          container.innerHTML = '<p class="message">Erro ao carregar os áudios.</p>';
-          console.error(err);
-        });
-    }
-  </script>
+    const playBtn = document.createElement('button');
+    playBtn.className = 'play-btn';
+    playBtn.textContent = '▶';
+
+    const progressBar = document.createElement('div');
+    progressBar.className = 'progress-bar';
+    const progress = document.createElement('div');
+    progress.className = 'progress';
+    progressBar.appendChild(progress);
+
+    const timeDisplay = document.createElement('div');
+    timeDisplay.className = 'time-display';
+    timeDisplay.textContent = '0:00';
+
+    controls.appendChild(playBtn);
+    controls.appendChild(progressBar);
+    controls.appendChild(timeDisplay);
+    content.appendChild(controls);
+
+    playBtn.onclick = () => {
+      if(audio.paused){ audio.play(); playBtn.textContent = '⏸'; }
+      else{ audio.pause(); playBtn.textContent = '▶'; }
+    };
+
+    audio.ontimeupdate = () => {
+      const percent = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = percent + '%';
+      timeDisplay.textContent = formatTime(audio.currentTime);
+    };
+
+    progressBar.onclick = (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const percent = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = percent * audio.duration;
+    };
+
+    audio.onended = () => {
+      playBtn.textContent = '▶';
+      progress.style.width = '0%';
+      timeDisplay.textContent = '0:00';
+    };
+
+    content.appendChild(audio);
+
+  } else if(file.tipo === 'video') {
+    content = document.createElement('video');
+    content.src = file.url; content.controls = true; content.autoplay = true;
+  } else if(file.tipo === 'pdf') {
+    content = document.createElement('iframe');
+    content.src = file.url;
+  } else if(file.tipo === 'image') {
+    content = document.createElement('img');
+    content.src = file.url; content.alt = file.nome || 'Imagem';
+  } else {
+    content = document.createElement('a');
+    content.href = file.url;
+    content.textContent = 'Abrir arquivo';
+    content.target = '_blank';
+  }
+
+  contentWrapper.appendChild(content);
+  fsDiv.appendChild(topBar);
+  fsDiv.appendChild(contentWrapper);
+  document.body.appendChild(fsDiv);
+  fsDiv.classList.add('show');
+}
+
+function createContentButton(file) {
+  const btn = document.createElement('button');
+  btn.className = 'file-btn';
+  btn.textContent = file.nome || file.tipo;
+  btn.addEventListener('click', () => openFullscreen(file));
+  container.appendChild(btn);
+}
+
+if(!qrId){
+  container.innerHTML = '<p class="message">ID do QR code não informado.</p>';
+} else {
+  fetch(`/api/conteudos/${qrId}`)
+    .then(res => res.json())
+    .then(data => {
+      title.textContent = data.descricao || 'Conteúdos do QR Code';
+
+      const files = [
+        ...(data.audios || []),
+        ...(data.videos || []),
+        ...(data.pdfs || []),
+        ...(data.imagens || []),
+      ];
+
+      if(files.length === 0) {
+        container.innerHTML = '<p class="message">Nenhum conteúdo disponível.</p>';
+        return;
+      }
+
+      files.forEach(file => createContentButton(file));
+    })
+    .catch(err => {
+      container.innerHTML = '<p class="message">Erro ao carregar os conteúdos.</p>';
+      console.error(err);
+    });
+}
+</script>
+
 </body>
 </html>

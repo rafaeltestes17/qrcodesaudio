@@ -1,24 +1,40 @@
 {
   "1": {
-    "descricao": "Animais dos bons  sadasdsada",
+    "descricao": "QR CODE 1 ",
     "audios": [
       {
         "url": "/uploads/1756893729265-489395756-Epic Electric Timer - 15 Seconds Countdown.mp3",
         "nome": "Delicia nossa nome audio 1 teste"
+      }
+    ],
+    "qrImage": "/uploads/1756985827948-670966751-qr-code3audio.png",
+    "arquivos": [
+      {
+        "tipo": "audio",
+        "url": "/uploads/1756987847383-259589255-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
+        "nome": "Som 1 Teste"
       },
       {
-        "url": "/uploads/1756896051861-844650282-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
-        "nome": "testeeeeeeeeeeeeeeeeee"
+        "tipo": "pdf",
+        "url": "/uploads/1756990791530-171506636-mesa-final.pdf",
+        "nome": "PDF 1 Teste"
+      },
+      {
+        "tipo": "video",
+        "url": "/uploads/1756995621247-323947876-video.mp4",
+        "nome": "Video 1 Teste"
+      },
+      {
+        "tipo": "image",
+        "url": "/uploads/1756997100653-541446157-perfect.png",
+        "nome": "Imagem 1 Teste"
       }
     ]
   },
   "2": {
-    "descricao": "Isso é que era code 2",
-    "audios": [
-      {
-        "url": "/uploads/1756896776950-478971525-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
-        "nome": "teste "
-      }
-    ]
+    "descricao": "QR CODE 2 CAROLINA ",
+    "audios": [],
+    "qrImage": "/uploads/1756997015064-846358655-qr-code2audio.png",
+    "arquivos": []
   }
 }
