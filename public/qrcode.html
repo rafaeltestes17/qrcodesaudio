@@ -4,22 +4,81 @@
 <meta charset="UTF-8">
 <title>Conteúdos do QR Code</title>
 <style>
-  body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; color: #333; }
-  .container { max-width: 800px; margin: 20px auto; padding: 20px; text-align: center; }
-  
-  .logo-container { margin-bottom: 20px; }
-  .logo-container img { max-width: 200px; height: auto; }
+  @font-face {
+    font-family: 'MyriadPro-Regular_0';
+    src: url('imagens/MyriadPro-Regular_0.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-  h1 { text-align: center; color: #2c3e50; margin-bottom: 25px; }
+  body {
+    font-family: 'MyriadPro-Regular_0', Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container-wrapper {
+    position: relative;
+    width: 500px;
+    max-width: 95%;
+    background: #f9f9f9;
+    padding: 100px 30px 100px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    display: flex;
+    overflow-y: auto;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .container-wrapper img.logo-top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 120px;
+    height: auto;
+  }
+
+  .container-wrapper img.logo-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    max-width: 100px;
+    height: auto;
+  }
+
+  h1 {
+    font-family: 'MyriadPro-Regular_0';
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
 
   .file-btn {
-    display: flex; justify-content: center; align-items: center;
-    width: 100%; padding: 15px; margin: 10px 0;
-    font-size: 16px; font-weight: bold;
-    background: #2c3e50; color: #fff; border: none; border-radius: 8px;
-    cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: block;           
+  width: 100%;              
+  max-width: 600px;         
+  margin: 15px auto;        
+  padding: 30px;            
+  font-size: 1.2rem;        
+  text-align: center;       
+  border: none;                
+  background-color: #000000; 
+  color: white;             
+  cursor: pointer;          
+  transition: background 0.3s ease;
   }
-  .file-btn:hover { background: #1a252f; transform: scale(1.02); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+  .file-btn:hover {
+    background: #222222;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
 
   .fullscreen {
     position: fixed; top: 0; left: 0;
@@ -31,10 +90,9 @@
   }
   .fullscreen.show { opacity: 1; transform: scale(1); }
 
-  /* --- Barra superior --- */
   .top-bar {
     width: 100%; height: 50px;
-    background: #2c3e50; color: #fff;
+    background: #000000; color: #fff;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 15px; box-sizing: border-box;
     flex-shrink: 0;
@@ -52,7 +110,6 @@
     background: #fff; overflow: hidden; position: relative;
   }
 
-  /* --- Áudio customizado --- */
   .audio-player {
     display: flex; flex-direction: column; align-items: center;
     background: #fff; padding: 20px; border-radius: 12px;
@@ -63,7 +120,7 @@
   .play-btn {
     width: 45px; height: 45px;
     border-radius: 50%; border: none;
-    background: #2c3e50; color: #fff;
+    background: #000000; color: #fff;
     font-size: 20px; cursor: pointer;
     display: flex; justify-content: center; align-items: center;
     transition: background 0.2s;
@@ -83,20 +140,20 @@
   .message { text-align: center; font-style: italic; color: #555; margin-top: 20px; }
 
   @media(max-width:768px) {
-    .file-btn { font-size: 14px; padding: 12px; }
-    .top-bar .title { font-size: 14px; }
-    .logo-container img { max-width: 150px; }
+    .container-wrapper { width: 90%; padding: 80px 20px; }
+    .file-btn { font-size: 16px; height: 70px; margin: 10px 0; }
+    .container-wrapper img.logo-top { max-width: 80px; }
+    .container-wrapper img.logo-bottom { max-width: 70px; }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="logo-container">
-    <img src="logo.png" alt="Logo da Empresa">
-  </div>
+<div class="container-wrapper">
+  <img src="imagens/logomuseu.png" class="logo-top" alt="Logo Topo">
   <h1>Conteúdos do QR Code</h1>
   <div id="content-container"></div>
+  <img src="imagens/logoserpa.png" class="logo-bottom" alt="Logo Fundo">
 </div>
 
 <script>
@@ -126,7 +183,7 @@ function openFullscreen(file) {
   closeBtn.textContent = 'Fechar';
   closeBtn.onclick = () => fsDiv.remove();
 
-  topBar.appendChild(document.createElement('div')); // espaço vazio à esquerda
+  topBar.appendChild(document.createElement('div'));
   topBar.appendChild(fileTitle);
   topBar.appendChild(closeBtn);
 
@@ -226,19 +283,16 @@ if(!qrId){
     .then(res => res.json())
     .then(data => {
       title.textContent = data.descricao || 'Conteúdos do QR Code';
-
       const files = [
         ...(data.audios || []),
         ...(data.videos || []),
         ...(data.pdfs || []),
         ...(data.imagens || []),
       ];
-
       if(files.length === 0) {
         container.innerHTML = '<p class="message">Nenhum conteúdo disponível.</p>';
         return;
       }
-
       files.forEach(file => createContentButton(file));
     })
     .catch(err => {
