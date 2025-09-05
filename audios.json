@@ -1,75 +1,722 @@
 {
   "1": {
-    "descricao": "QR CODE 1 - Aventura nas Estrelas",
-    "arquivos": [
-      {
-        "tipo": "audio",
-        "url": "/uploads/1757062469751-442974305-Epic Electric Timer - 15 Seconds Countdown.mp3",
-        "nome": "Musica 1"
-      },
-      {
-        "tipo": "audio",
-        "url": "/uploads/1757062475666-247325857-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
-        "nome": "Musica 2"
-      }
-    ],
-    "qrImage": "/uploads/1757062525343-838934612-qr-code1audio.png"
+    "descricao": "Sala 1 Uma vida de trabalho",
+    "arquivos": [],
+    "qrImage": ""
   },
   "2": {
-    "descricao": "QR CODE 2 - Segredo da Floresta"
+    "descricao": "Sala 1 Uma vida de trabalho ENG",
+    "arquivos": [],
+    "qrImage": ""
   },
   "3": {
-    "descricao": "QR CODE 3 - Tesouro Perdido"
+    "descricao": "Sala 1 As coleções",
+    "arquivos": [],
+    "qrImage": ""
   },
   "4": {
-    "descricao": "QR CODE 4 - Mistério Submarino"
+    "descricao": "Sala 1 As coleções ENG",
+    "arquivos": [],
+    "qrImage": ""
   },
   "5": {
-    "descricao": "QR CODE 5 - Viagem no Tempo"
+    "descricao": "Sala 1 Que futuro",
+    "arquivos": [],
+    "qrImage": ""
   },
   "6": {
-    "descricao": "QR CODE 6 - Lenda do Dragão Azul"
+    "descricao": "Sala 1 Que futuro ENG",
+    "arquivos": [],
+    "qrImage": ""
   },
   "7": {
-    "descricao": "QR CODE 7 - O Castelo Esquecido"
+    "descricao": "Sala 1 O território",
+    "arquivos": [],
+    "qrImage": ""
   },
   "8": {
-    "descricao": "QR CODE 8 - A Cidade Invisível"
+    "descricao": "Sala 1 O território ENG",
+    "arquivos": [],
+    "qrImage": ""
   },
   "9": {
-    "descricao": "QR CODE 9 - Guardiões do Deserto"
+    "descricao": "Sala 1 Dos ofícios à construção",
+    "arquivos": [],
+    "qrImage": ""
   },
   "10": {
-    "descricao": "QR CODE 10 - O Portal Misterioso"
+    "descricao": "Sala 1 Dos ofícios à construção ENG",
+    "arquivos": [],
+    "qrImage": ""
   },
   "11": {
-    "descricao": "QR CODE 11 - Sombras da Lua"
+    "descricao": "Sala 1 Um olhar atento (mapa)",
+    "arquivos": [],
+    "qrImage": ""
   },
   "12": {
-    "descricao": "QR CODE 12 - A Jornada dos Ventos"
+    "descricao": "Sala 1 Um olhar atento (mapa) ENG",
+    "arquivos": [],
+    "qrImage": ""
   },
   "13": {
-    "descricao": "QR CODE 13 - O Enigma da Caverna"
+    "descricao": "Vídeo: Mestre José Vilão sobbre o restauro da nora (excerto)",
+    "arquivos": [],
+    "qrImage": ""
   },
   "14": {
-    "descricao": "QR CODE 14 - Segredo do Oceano"
+    "descricao": "Testemunhos 1",
+    "arquivos": [],
+    "qrImage": ""
   },
   "15": {
-    "descricao": "QR CODE 15 - A Torre de Cristal"
+    "descricao": "Sala 2 De mercado a museu",
+    "arquivos": [],
+    "qrImage": ""
   },
   "16": {
-    "descricao": "QR CODE 16 - Caminho das Estrelas"
+    "descricao": "Sala 2 De mercado a museu ENG",
+    "arquivos": [],
+    "qrImage": ""
   },
   "17": {
-    "descricao": "QR CODE 17 - Reino das Sombras"
+    "descricao": "O edifício",
+    "arquivos": [],
+    "qrImage": ""
   },
   "18": {
-    "descricao": "QR CODE 18 - O Códice Perdido"
+    "descricao": "O edifício ENG",
+    "arquivos": [],
+    "qrImage": ""
   },
   "19": {
-    "descricao": "QR CODE 19 - A Chave de Ouro"
+    "descricao": "Arquitetura/museografia(ltp)",
+    "arquivos": [],
+    "qrImage": ""
   },
   "20": {
-    "descricao": "QR CODE 20 - O Despertar da Fênix"
+    "descricao": "Arquitetura/museografia(ltp) ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "21": {
+    "descricao": "O mercado",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "22": {
+    "descricao": "O mercado ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "23": {
+    "descricao": "Sala 2 museu / gostariamos de",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "24": {
+    "descricao": "Sala 2 museu / gostariamos de ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "25": {
+    "descricao": "As coleções",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "26": {
+    "descricao": "As coleções ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "27": {
+    "descricao": "Vídeo: Cortejo Histórico Etnográfico 79-21",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "28": {
+    "descricao": "Testemunhos 2",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "29": {
+    "descricao": "Sala 3 Trabalho nos campos",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "30": {
+    "descricao": "Sala 3 Trabalho nos campos ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "31": {
+    "descricao": "As Hortas e os pomares",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "32": {
+    "descricao": "As Hortas e os pomares ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "33": {
+    "descricao": "A serra e o mel",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "34": {
+    "descricao": "A serra e o mel ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "35": {
+    "descricao": "Operações agrícolas",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "36": {
+    "descricao": "Operações agrícolas ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "37": {
+    "descricao": "Vídeo: Moda da lavoura",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "38": {
+    "descricao": "Vídeo: Lavra (excerto do filme 'Do Pulo do Lobo ao Rio Mira')",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "39": {
+    "descricao": "Sistemas de atrelagem",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "40": {
+    "descricao": "Sistemas de atrelagem ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "41": {
+    "descricao": "Maquinarias e tecnologias",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "42": {
+    "descricao": "Maquinarias e tecnologias ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "43": {
+    "descricao": "O abegão",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "44": {
+    "descricao": "O abegão ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "45": {
+    "descricao": "Vídeo: O último abegão em Serpa",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "46": {
+    "descricao": "Testemunhos 3",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "47": {
+    "descricao": "Sala 4 Artes apoio vida rual",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "48": {
+    "descricao": "Sala 4 Artes apoio vida rual ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "49": {
+    "descricao": "Instrumentos comuns",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "50": {
+    "descricao": "Instrumentos comuns ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "51": {
+    "descricao": "O carpinteiro",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "52": {
+    "descricao": "O carpinteiro ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "53": {
+    "descricao": "O ferreiro",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "54": {
+    "descricao": "O ferreiro ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "55": {
+    "descricao": "O carvão",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "56": {
+    "descricao": "O carvão ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "57": {
+    "descricao": "O ferrador",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "58": {
+    "descricao": "O ferrador ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "59": {
+    "descricao": "O albardeiro",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "60": {
+    "descricao": "O albardeiro ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "61": {
+    "descricao": "O correeiro e o cordoeiro",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "62": {
+    "descricao": "O correeiro e o cordoeiro ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "63": {
+    "descricao": "Circulação",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "64": {
+    "descricao": "Circulação ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "65": {
+    "descricao": "Testemunhos 4",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "66": {
+    "descricao": "Sala 5(7) Vivências nos campos",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "67": {
+    "descricao": "Sala 5(7) Vivências nos campos ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "68": {
+    "descricao": "Desigualdades sociais",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "69": {
+    "descricao": "Desigualdades sociais ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "70": {
+    "descricao": "Trabalhos sazonais",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "71": {
+    "descricao": "Trabalhos sazonais ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "72": {
+    "descricao": "Vídeo: Ceifeira, linda ceifeira",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "73": {
+    "descricao": "Vídeo: Ceifeira",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "74": {
+    "descricao": "Pausas e refeições",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "75": {
+    "descricao": "Pausas e refeições ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "76": {
+    "descricao": "Vídeo: Uma família Alentejana",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "77": {
+    "descricao": "A água",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "78": {
+    "descricao": "A água ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "79": {
+    "descricao": "A pastorícia",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "80": {
+    "descricao": "A pastorícia ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "81": {
+    "descricao": "Testemunho/Aúdio: Manuel Martins (pastor)",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "82": {
+    "descricao": "A tosquia",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "83": {
+    "descricao": "A tosquia ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "84": {
+    "descricao": "Os porqueiros",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "85": {
+    "descricao": "Os porqueiros ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "86": {
+    "descricao": "Testemunhos 5",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "87": {
+    "descricao": "Sala 6(8) O rio",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "88": {
+    "descricao": "Sala 6(8) O rio ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "89": {
+    "descricao": "A pesca",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "90": {
+    "descricao": "A pesca ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "91": {
+    "descricao": "Vídeo: Pesca do Sável",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "92": {
+    "descricao": "Os moinhos",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "93": {
+    "descricao": "Os moinhos ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "94": {
+    "descricao": "O cesteiro",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "95": {
+    "descricao": "O cesteiro ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "96": {
+    "descricao": "O cadeireiro",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "97": {
+    "descricao": "O cadeireiro ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "98": {
+    "descricao": "Testemunhos 6",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "99": {
+    "descricao": "Sala 7(5) Ofícios de Rua",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "100": {
+    "descricao": "Sala 7(5) Ofícios de Rua ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "101": {
+    "descricao": "mesa multimédia 2 textos (Maria João): livro de posturas/recenseamento da população",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "102": {
+    "descricao": "mesa multimédia 2 textos (Maria João): livro de posturas/recenseamento da população ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "103": {
+    "descricao": "Costureira",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "104": {
+    "descricao": "Costureira ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "105": {
+    "descricao": "Alfaiate",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "106": {
+    "descricao": "Alfaiate ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "107": {
+    "descricao": "Sapateiro",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "108": {
+    "descricao": "Sapateiro ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "109": {
+    "descricao": "Áudio + foto: Alentejo, Alentejo",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "110": {
+    "descricao": "Barbeiro",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "111": {
+    "descricao": "Barbeiro ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "112": {
+    "descricao": "Pão",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "113": {
+    "descricao": "Pão ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "114": {
+    "descricao": "Mercearia",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "115": {
+    "descricao": "Mercearia ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "116": {
+    "descricao": "Taberna",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "117": {
+    "descricao": "Taberna ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "118": {
+    "descricao": "Testemunhos 7",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "119": {
+    "descricao": "Sala 8(6) ecos-dos-oficios-na-paisag",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "120": {
+    "descricao": "Sala 8(6) ecos-dos-oficios-na-paisag ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "121": {
+    "descricao": "As cartas Pery",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "122": {
+    "descricao": "As cartas Pery ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "123": {
+    "descricao": "A olaria",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "124": {
+    "descricao": "A olaria ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "125": {
+    "descricao": "A conservação de carnes",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "126": {
+    "descricao": "A conservação de carnes ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "127": {
+    "descricao": "O vinho de talha",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "128": {
+    "descricao": "O vinho de talha ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "129": {
+    "descricao": "A impermanência de paisagem",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "130": {
+    "descricao": "A impermanência de paisagem ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "131": {
+    "descricao": "A apanha da azeitona",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "132": {
+    "descricao": "A apanha da azeitona ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "133": {
+    "descricao": "O olival",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "134": {
+    "descricao": "O olival ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "135": {
+    "descricao": "O azeite",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "136": {
+    "descricao": "O azeite ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "137": {
+    "descricao": "A rouparia",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "138": {
+    "descricao": "A rouparia ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "139": {
+    "descricao": "Queijo Serpa",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "140": {
+    "descricao": "Queijo Serpa ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "141": {
+    "descricao": "Vídeo: Queijo Serpa",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "142": {
+    "descricao": "A latoaria",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "143": {
+    "descricao": "A latoaria ENG",
+    "arquivos": [],
+    "qrImage": ""
+  },
+  "144": {
+    "descricao": "Testemunhos 8",
+    "arquivos": [],
+    "qrImage": ""
   }
 }
