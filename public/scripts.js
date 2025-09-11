@@ -38,18 +38,30 @@ function renderFiles() {
         const row = document.createElement('div');
         row.className = 'audio-row';
 
+        // Campo para nome do arquivo
         const input = document.createElement('input');
         input.type = 'text';
         input.value = file.nome || `Arquivo ${i+1}`;
+        input.placeholder = 'Nome do arquivo';
         input.addEventListener('input', () => currentFiles[i].nome = input.value);
+        row.appendChild(input);
+
+        // Se for áudio, adiciona campo de descrição
+        if(file.tipo === 'audio') {
+            const descInput = document.createElement('input');
+            descInput.type = 'text';
+            descInput.value = file.descricao || '';
+            descInput.placeholder = 'Descrição do áudio';
+            descInput.addEventListener('input', () => currentFiles[i].descricao = descInput.value);
+            row.appendChild(descInput);
+        }
 
         const removeBtn = document.createElement('button');
         removeBtn.textContent = 'Remover';
         removeBtn.classList.add('files-btn');
         removeBtn.onclick = () => { currentFiles.splice(i, 1); renderFiles(); };
-
-        row.appendChild(input);
         row.appendChild(removeBtn);
+
         li.appendChild(row);
 
         const urlSpan = document.createElement('span');
@@ -116,6 +128,8 @@ uploadBtn.addEventListener('click', () => {
         .then(r => r.json())
         .then(data => {
             if (data.success) {
+                // Garantir que arquivo de áudio tenha campo descrição vazio inicialmente
+                if(data.file.tipo === 'audio') data.file.descricao = '';
                 currentFiles.push(data.file);
                 renderFiles();
                 alert('Upload concluído!');
@@ -125,7 +139,7 @@ uploadBtn.addEventListener('click', () => {
 });
 
 // --------------------------
-// Upload QR Code
+// Upload QR Code 
 // --------------------------
 uploadQRBtn.addEventListener('click', () => {
     const file = uploadQRInput.files[0];

@@ -3,27 +3,29 @@
     "descricao": "Sala 1 Uma vida de trabalho ",
     "arquivos": [
       {
-        "tipo": "pdf",
-        "url": "/uploads/1757279716251-651670059-MESA 2.pdf",
-        "nome": "MESA 2"
-      },
-      {
-        "tipo": "image",
-        "url": "/uploads/1757279722822-141903324-logoserpa.png",
-        "nome": "logoserpa"
-      },
-      {
-        "tipo": "video",
-        "url": "/uploads/1757279733281-262418003-video.mp4",
-        "nome": "video"
+        "tipo": "audio",
+        "url": "/uploads/1757583572046-242734635-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
+        "nome": "Audio 1",
+        "descricao": "Audio feito por rafael em 1999 com amor e carinho blablabla sajlkfkasjfasmfsafksajfnkasjfhkjafsfafsfa"
       },
       {
         "tipo": "audio",
-        "url": "/uploads/1757283124330-578295446-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
-        "nome": "musica teste"
+        "url": "/uploads/1757583603539-830969405-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
+        "nome": "Audio 2",
+        "descricao": "Audio feito por rafael em 1999 com amor e carinho blablabla sajlkfkasjfasmfsafksajfnkasjfhkjafsfafsfaAudio feito por rafael em 1999 com amor e carinho blablabla sajlkfkasjfasmfsafksajfnkasjfhkjafsfafsfaAudio feito por rafael em 1999 com amor e carinho blablabla sajlkfkasjfasmfsafksajfnkasjfhkjafsfafsfa dsadsadsad   dsadsadsad  dsadsadsad  dsadsadsad  dsadsadsad  dsadsadsad  dsadsadsad  dsadsadsad  dsadsadsad  dsadsadsad "
+      },
+      {
+        "tipo": "video",
+        "url": "/uploads/1757583628759-352447950-video.mp4",
+        "nome": "Video Teste"
+      },
+      {
+        "tipo": "image",
+        "url": "/uploads/1757583873196-773657973-modal logo.png",
+        "nome": "Imagem teste"
       }
     ],
-    "qrImage": ""
+    "qrImage": "/uploads/1757583724792-766573345-qr-code1audio.png"
   },
   "2": {
     "descricao": "Sala 1 Uma vida de trabalho ENG",
