@@ -5,17 +5,32 @@
       {
         "tipo": "audio",
         "url": "/uploads/1757585205310-355788325-Epic Electric Timer - 15 Seconds Countdown.mp3",
-        "nome": "AUDIO 1",
-        "descricao": "A Importância da Leitura na Vida Moderna  A leitura sempre foi uma ferramenta fundamental para o desenvolvimento pessoal e intelectual do ser humano. Em um mundo cada vez mais conectado e repleto de informações, a capacidade de compreender, interpretar e refletir sobre textos tornou-se ainda mais essencial. Ler não significa apenas decodificar palavras; significa mergulhar em diferentes perspectivas, adquirir conhecimento e exercitar a imaginação.  Além disso, a leitura contribui diretamente para a melhoria da comunicação, ampliando o vocabulário e fortalecendo a habilidade de argumentação. Pessoas que cultivam o hábito de ler tendem a ser mais críticas, criativas e empáticas, pois a literatura permite vivenciar experiências diversas sem sair do lugar. Por isso, é fundamental que escolas, famílias e a sociedade incentivem o contato com livros desde cedo, criando um ambiente propício para o desenvolvimento intelectual e emocional.  Portanto, em uma era marcada pelo consumo rápido de informações e pela tecnologia, a leitura permanece como um pilar da formação humana, capaz de transformar pensamentos, ampliar horizontes e preparar indivíduos para os desafios do mundo contemporâneo."
+        "nome": "AUDIO 1 ",
+        "descricao": "sakdjsafdasf sakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsasakdjsafdasf sakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasf sakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasf sakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasf sakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasf sakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasf sakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfsakdjsafdasfkdjsafdasfsakdjsafdasfsakdjsafdasf"
       },
       {
         "tipo": "audio",
         "url": "/uploads/1757585243493-629948688-Bold Statement 15 sec, David Fesliyan Royalty free music, no copyright.mp3",
-        "nome": "sadasdas",
-        "descricao": "sadsadsad"
+        "nome": "audio 2",
+        "descricao": "teste desc"
+      },
+      {
+        "tipo": "image",
+        "url": "/uploads/1757587574264-34907381-modal logo.png",
+        "nome": "LOGO MODAL"
+      },
+      {
+        "tipo": "pdf",
+        "url": "/uploads/1757587594175-979929026-MESA 2.pdf",
+        "nome": "MESA 2"
+      },
+      {
+        "tipo": "video",
+        "url": "/uploads/1757587625322-110441200-video.mp4",
+        "nome": "Video"
       }
     ],
-    "qrImage": "/uploads/1757585274195-821271915-qr-code1audio.png"
+    "qrImage": "/uploads/1757587479802-520563580-qr-code1audio.png"
   },
   "2": {
     "descricao": "Sala 1 Uma vida de trabalho ENG",
